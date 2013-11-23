@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 aac28e4a10b9488f0be9d7ed9f898ff78fce4c57 p214c <p_cesario@hotmail.com> 1385242385 -0700	commit (initial): adding snapshots
+aac28e4a10b9488f0be9d7ed9f898ff78fce4c57 5deca42cdf32abb44e74c08315855b697c6df62d p214c <p_cesario@hotmail.com> 1385242505 -0700	pull origin mvn-repo: Merge made by the 'recursive' strategy.
+5deca42cdf32abb44e74c08315855b697c6df62d d1f6a537c96ec77ec7b460049fd8d4a35b14f771 p214c <p_cesario@hotmail.com> 1385242697 -0700	commit: removing init files used to create directories
+d1f6a537c96ec77ec7b460049fd8d4a35b14f771 43382460d9fdab71725b8c6ec51355f63628cfbe p214c <p_cesario@hotmail.com> 1385242983 -0700	commit: adding to private repo

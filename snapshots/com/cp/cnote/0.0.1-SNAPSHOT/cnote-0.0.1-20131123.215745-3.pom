@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.cp</groupId>
+	<artifactId>cnote</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<!-- github server corresponds to entry in ~/.m2/settings.xml -->
+		<github.global.server>github</github.global.server>
+	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>releases.repo</id>
+			<url>file://${basedir}/../artifacts/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots.repo</id>
+			<url>file://${basedir}/../artifacts/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:git@github.com:p214c/cnote.git</connection>
+		<url>scm:git:git@github.com:p214c/cnote.git</url>
+		<developerConnection>scm:git:git@github.com:p214c/cnote.git</developerConnection>
+	</scm>
+
+	<!-- Use this in a project that pulls in the cnote artifacts from github 
+		acting as maven repo <repositories> <repository> <id>artifacts-mvn-repo</id> 
+		<url>https://raw.github.com/p214c/artifacts/mvn-repo/</url> <snapshots> <enabled>true</enabled> 
+		<updatePolicy>always</updatePolicy> </snapshots> </repository> </repositories> -->
+
+	<dependencies>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- http://blog.glassdiary.com/post/65190237091/hosting-your-own-maven-repository-on-github-or -->
+			<!-- http://stackoverflow.com/questions/14013644/hosting-a-maven-repository-on-github -->
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.8</version>
+				<configuration>
+					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
+					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
+					<outputDirectory>${basedir}/../artifacts</outputDirectory> <!-- matches distribution management repository url above assumed git artifacts repo relative to this local git repo -->
+					<branch>refs/heads/mvn-repo</branch>                       <!-- remote branch name -->
+					<includes>
+						<include>**/*</include>
+					</includes>
+					<repositoryName>https://github.com/p214c/artifacts</repositoryName>      <!-- github repo name -->
+					<repositoryOwner>p214c</repositoryOwner>    <!-- github username -->
+				</configuration>
+				<executions>
+					<!-- run site-maven-plugin's 'site' target as part of the build's normal 
+						'deploy' phase -->
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
