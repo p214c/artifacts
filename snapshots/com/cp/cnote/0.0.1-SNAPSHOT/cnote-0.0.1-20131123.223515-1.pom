@@ -23,7 +23,7 @@
 		<github.global.server>github</github.global.server>
 		<git.name>artifacts</git.name>
 		<git.branch>refs/heads/mvn-repo</git.branch>
-		<artifacts.outputDirectory>${project.build.directory}/artifacts/snapshots</artifacts.outputDirectory>
+		<artifacts.outputDirectory>${project.build.directory}/artifacts</artifacts.outputDirectory>
 	</properties>
 
 	<scm>
