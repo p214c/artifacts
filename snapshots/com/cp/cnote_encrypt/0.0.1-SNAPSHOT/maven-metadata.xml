@@ -5,21 +5,21 @@
   <version>0.0.1-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20140318.072413</timestamp>
+      <timestamp>20140318.110634</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
-    <lastUpdated>20140318072413</lastUpdated>
+    <lastUpdated>20140318110634</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>0.0.1-20140318.072413-1</value>
-        <updated>20140318072413</updated>
+        <value>0.0.1-20140318.110634-1</value>
+        <updated>20140318110634</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>chrome</classifier>
         <extension>pexe</extension>
-        <value>0.0.1-20140318.072413-1</value>
-        <updated>20140318072413</updated>
+        <value>0.0.1-20140318.110634-1</value>
+        <updated>20140318110634</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
